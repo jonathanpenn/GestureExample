@@ -1,0 +1,9 @@
+.DS_Store
+*.o
+build/
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+*.xcworkspace/xcuserdata/*
+/Localization
+/automation_results/*
+!/automation_results/.gitkeep

@@ -20,7 +20,7 @@
 		AB6ADD161586F7060053407F /* GestureExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6ADD151586F7060053407F /* GestureExampleTests.m */; };
 		AB6ADD221586F7590053407F /* CMNDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6ADD201586F7590053407F /* CMNDisplayViewController.m */; };
 		ABC6BD981586F7B30071408C /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABC6BD971586F7B30071408C /* Storyboard.storyboard */; };
-		ABFC1D3B1586FF1F00FCCD5B /* CircularGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFC1D3A1586FF1F00FCCD5B /* CircularGestureRecognizer.m */; };
+		ABFC1D3B1586FF1F00FCCD5B /* PRPCircleGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFC1D3A1586FF1F00FCCD5B /* PRPCircleGestureRecognizer.m */; };
 		ABFCDFD4158A549200D9624E /* TrackingGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFCDFD3158A549200D9624E /* TrackingGestureRecognizer.m */; };
 /* End PBXBuildFile section */
 
@@ -54,8 +54,8 @@
 		AB6ADD1F1586F7590053407F /* CMNDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMNDisplayViewController.h; sourceTree = "<group>"; };
 		AB6ADD201586F7590053407F /* CMNDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMNDisplayViewController.m; sourceTree = "<group>"; };
 		ABC6BD971586F7B30071408C /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
-		ABFC1D391586FF1F00FCCD5B /* CircularGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircularGestureRecognizer.h; sourceTree = "<group>"; };
-		ABFC1D3A1586FF1F00FCCD5B /* CircularGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircularGestureRecognizer.m; sourceTree = "<group>"; };
+		ABFC1D391586FF1F00FCCD5B /* PRPCircleGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRPCircleGestureRecognizer.h; sourceTree = "<group>"; };
+		ABFC1D3A1586FF1F00FCCD5B /* PRPCircleGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRPCircleGestureRecognizer.m; sourceTree = "<group>"; };
 		ABFCDFD2158A549200D9624E /* TrackingGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackingGestureRecognizer.h; sourceTree = "<group>"; };
 		ABFCDFD3158A549200D9624E /* TrackingGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackingGestureRecognizer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,8 +124,8 @@
 				AB6ADD201586F7590053407F /* CMNDisplayViewController.m */,
 				ABFCDFD2158A549200D9624E /* TrackingGestureRecognizer.h */,
 				ABFCDFD3158A549200D9624E /* TrackingGestureRecognizer.m */,
-				ABFC1D391586FF1F00FCCD5B /* CircularGestureRecognizer.h */,
-				ABFC1D3A1586FF1F00FCCD5B /* CircularGestureRecognizer.m */,
+				ABFC1D391586FF1F00FCCD5B /* PRPCircleGestureRecognizer.h */,
+				ABFC1D3A1586FF1F00FCCD5B /* PRPCircleGestureRecognizer.m */,
 				AB6ADCF71586F7050053407F /* Supporting Files */,
 			);
 			path = GestureExample;
@@ -272,7 +272,7 @@
 				AB6ADCFD1586F7050053407F /* main.m in Sources */,
 				AB6ADD011586F7050053407F /* CMNAppDelegate.m in Sources */,
 				AB6ADD221586F7590053407F /* CMNDisplayViewController.m in Sources */,
-				ABFC1D3B1586FF1F00FCCD5B /* CircularGestureRecognizer.m in Sources */,
+				ABFC1D3B1586FF1F00FCCD5B /* PRPCircleGestureRecognizer.m in Sources */,
 				ABFCDFD4158A549200D9624E /* TrackingGestureRecognizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

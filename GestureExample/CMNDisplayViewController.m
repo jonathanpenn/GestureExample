@@ -1,6 +1,6 @@
 #import "CMNDisplayViewController.h"
 #import "TrackingGestureRecognizer.h"
-#import "CircularGestureRecognizer.h"
+#import "PRPCircleGestureRecognizer.h"
 
 @implementation CMNDisplayViewController
 {
@@ -9,7 +9,7 @@
     UILongPressGestureRecognizer *_longPressRecognizer;
     UISwipeGestureRecognizer *_swipeRecognizer;
     UIRotationGestureRecognizer *_rotationRecognizer;
-    CircularGestureRecognizer *_customRecognizer;
+    PRPCircleGestureRecognizer *_customRecognizer;
 }
 
 @synthesize trackingStateLabel=_trackingStateLabel;
@@ -50,7 +50,7 @@
 
     _trackingRecognizer = [[TrackingGestureRecognizer alloc] initWithTarget:self action:@selector(trackingRecognizerFired:)];
     [recognizers addObject:_trackingRecognizer];
-    
+
     _tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapRecognizerFired)];
     [recognizers addObject:_tapRecognizer];
     
@@ -64,7 +64,7 @@
     _rotationRecognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotationRecognizerFired:)];
     [recognizers addObject:_rotationRecognizer];
 
-    _customRecognizer = [[CircularGestureRecognizer alloc] initWithTarget:self action:@selector(customRecognizerFired:)];
+    _customRecognizer = [[PRPCircleGestureRecognizer alloc] initWithTarget:self action:@selector(customRecognizerFired:)];
     [recognizers addObject:_customRecognizer];
 
     for (UIGestureRecognizer *recognizer in recognizers) {
@@ -124,7 +124,7 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
     [self triggerMessage:@"Rotated!"];
 }
 
-- (void)customRecognizerFired:(CircularGestureRecognizer *)recognizer
+- (void)customRecognizerFired:(PRPCircleGestureRecognizer *)recognizer
 {
     [self triggerMessage:@"Custom!"];
 }

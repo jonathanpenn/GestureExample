@@ -41,44 +41,48 @@
     }
 }
 
-- (void)setupGestureRecognizers
-{
-    [self removeDefaultGestureRecognizers];
-
-    NSMutableArray *recognizers = [NSMutableArray array];
-    
-
-    _trackingRecognizer = [[TrackingGestureRecognizer alloc] initWithTarget:self action:@selector(trackingRecognizerFired:)];
-    [recognizers addObject:_trackingRecognizer];
-
-    _tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapRecognizerFired)];
-    [recognizers addObject:_tapRecognizer];
-    
-    _longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressRecognizerFired)];
-    [recognizers addObject:_longPressRecognizer];
-    
-    _swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRecognizerFired:)];
-    _swipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight;
-    [recognizers addObject:_swipeRecognizer];
-    
-    _rotationRecognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotationRecognizerFired:)];
-    [recognizers addObject:_rotationRecognizer];
-
-    _customRecognizer = [[PRPCircleGestureRecognizer alloc] initWithTarget:self action:@selector(customRecognizerFired:)];
-    [recognizers addObject:_customRecognizer];
-
-    for (UIGestureRecognizer *recognizer in recognizers) {
-        [recognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
-        recognizer.delegate = self;
-        [self.tableView addGestureRecognizer:recognizer];
-    }
-}
-
 - (void)removeDefaultGestureRecognizers
 {
     for (UIGestureRecognizer *recognizer in self.tableView.gestureRecognizers) {
         [self.tableView removeGestureRecognizer:recognizer];
     }
+}
+
+- (void)setupGestureRecognizers
+{
+    [self removeDefaultGestureRecognizers];
+
+    _trackingRecognizer = [[TrackingGestureRecognizer alloc] initWithTarget:self action:@selector(trackingRecognizerFired:)];
+    [_trackingRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
+    _trackingRecognizer.delegate = self;
+    [self.tableView addGestureRecognizer:_trackingRecognizer];
+
+//    _tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapRecognizerFired:)];
+//    [_tapRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
+//    _tapRecognizer.delegate = self;
+//    [self.tableView addGestureRecognizer:_tapRecognizer];
+//    
+//    _longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressRecognizerFired:)];
+//    [_longPressRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
+//    _longPressRecognizer.delegate = self;
+//    [self.tableView addGestureRecognizer:_longPressRecognizer];
+//    
+//    _swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRecognizerFired:)];
+//    _swipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight;
+//    [_swipeRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
+//    _swipeRecognizer.delegate = self;
+//    [self.tableView addGestureRecognizer:_swipeRecognizer];
+//    
+//    _rotationRecognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotationRecognizerFired:)];
+//    [_rotationRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
+//    _rotationRecognizer.delegate = self;
+//    [self.tableView addGestureRecognizer:_rotationRecognizer];
+//
+//    _customRecognizer = [[PRPCircleGestureRecognizer alloc] initWithTarget:self action:@selector(customRecognizerFired:)];
+//    [_customRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
+//    _customRecognizer.delegate = self;
+//    [self.tableView addGestureRecognizer:_customRecognizer];
+
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer

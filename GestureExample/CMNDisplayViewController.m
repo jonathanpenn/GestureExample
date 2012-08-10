@@ -98,12 +98,12 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
     }
 }
 
-- (void)tapRecognizerFired
+- (void)tapRecognizerFired:(UITapGestureRecognizer *)recognizer
 {
     [self triggerMessage:@"Tapped!"];
 }
 
-- (void)longPressRecognizerFired
+- (void)longPressRecognizerFired:(UILongPressGestureRecognizer *)recognizer
 {
     [self triggerMessage:@"Long Pressed!"];
 }

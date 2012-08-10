@@ -163,6 +163,8 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
         self.rotationStateLabel.text = stateName;
     } else if (recognizer == _customRecognizer) {
         self.customStateLabel.text = stateName;
+    } else {
+        NSAssert(false, @"Unknown gesture recognizer %@", recognizer);
     }
 
     [self.tableView reloadData];

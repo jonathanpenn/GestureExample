@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB3C92141633574A00956A33 /* CMNBezelSwipeGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3C92131633574A00956A33 /* CMNBezelSwipeGestureRecognizer.m */; };
 		AB6ADCF11586F7050053407F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6ADCF01586F7050053407F /* UIKit.framework */; };
 		AB6ADCF31586F7050053407F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6ADCF21586F7050053407F /* Foundation.framework */; };
 		AB6ADCF51586F7050053407F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6ADCF41586F7050053407F /* CoreGraphics.framework */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB3C92121633574A00956A33 /* CMNBezelSwipeGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMNBezelSwipeGestureRecognizer.h; sourceTree = "<group>"; };
+		AB3C92131633574A00956A33 /* CMNBezelSwipeGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMNBezelSwipeGestureRecognizer.m; sourceTree = "<group>"; };
 		AB6ADCEC1586F7050053407F /* GestureExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GestureExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB6ADCF01586F7050053407F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AB6ADCF21586F7050053407F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -126,6 +129,8 @@
 				ABFCDFD3158A549200D9624E /* TrackingGestureRecognizer.m */,
 				ABFC1D391586FF1F00FCCD5B /* PRPCircleGestureRecognizer.h */,
 				ABFC1D3A1586FF1F00FCCD5B /* PRPCircleGestureRecognizer.m */,
+				AB3C92121633574A00956A33 /* CMNBezelSwipeGestureRecognizer.h */,
+				AB3C92131633574A00956A33 /* CMNBezelSwipeGestureRecognizer.m */,
 				AB6ADCF71586F7050053407F /* Supporting Files */,
 			);
 			path = GestureExample;
@@ -274,6 +279,7 @@
 				AB6ADD221586F7590053407F /* CMNDisplayViewController.m in Sources */,
 				ABFC1D3B1586FF1F00FCCD5B /* PRPCircleGestureRecognizer.m in Sources */,
 				ABFCDFD4158A549200D9624E /* TrackingGestureRecognizer.m in Sources */,
+				AB3C92141633574A00956A33 /* CMNBezelSwipeGestureRecognizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

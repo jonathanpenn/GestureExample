@@ -9,9 +9,12 @@
 @property (nonatomic, weak) IBOutlet UILabel *swipeStateLabel;
 @property (nonatomic, weak) IBOutlet UILabel *rotationStateLabel;
 @property (nonatomic, weak) IBOutlet UILabel *rotationDataLabel;
-@property (nonatomic, weak) IBOutlet UILabel *customStateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bezelSwipeLabel;
+@property (nonatomic, weak) IBOutlet UILabel *circleStateLabel;
 @property (nonatomic, weak) IBOutlet UILabel *triggeredLabel;
 
 @property (nonatomic, strong) IBOutletCollection(UILabel) NSMutableArray *fieldsToClear;
+
+- (IBAction)longPressRecognizerFired:(UILongPressGestureRecognizer *)recognizer;
 
 @end

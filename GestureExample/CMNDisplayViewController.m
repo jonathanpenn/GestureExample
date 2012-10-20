@@ -69,15 +69,15 @@
     _rotationRecognizer.delegate = self;
     [self.tableView addGestureRecognizer:_rotationRecognizer];
 
-    _bezelSwipeRecognizer = [[CMNBezelSwipeGestureRecognizer alloc] initWithTarget:self action:@selector(bezelRecognizerFired:)];
-    [_bezelSwipeRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
-    _bezelSwipeRecognizer.delegate = self;
-    [self.tableView addGestureRecognizer:_bezelSwipeRecognizer];
-
     _circleRecognizer = [[PRPCircleGestureRecognizer alloc] initWithTarget:self action:@selector(circleRecognizerFired:)];
     [_circleRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
     _circleRecognizer.delegate = self;
     [self.tableView addGestureRecognizer:_circleRecognizer];
+
+    _bezelSwipeRecognizer = [[CMNBezelSwipeGestureRecognizer alloc] initWithTarget:self action:@selector(bezelRecognizerFired:)];
+    [_bezelSwipeRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
+    _bezelSwipeRecognizer.delegate = self;
+    [[UIApplication sharedApplication].windows[0] addGestureRecognizer:_bezelSwipeRecognizer];
 
 }
 

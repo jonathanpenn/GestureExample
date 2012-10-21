@@ -92,7 +92,6 @@
 		AB6ADCE11586F7050053407F = {
 			isa = PBXGroup;
 			children = (
-				ABB0A396163361DC00ED2C74 /* Default-568h@2x.png */,
 				AB6ADCF61586F7050053407F /* GestureExample */,
 				AB6ADD0E1586F7050053407F /* GestureExampleTests */,
 				AB6ADCEF1586F7050053407F /* Frameworks */,
@@ -134,6 +133,7 @@
 				ABFC1D3A1586FF1F00FCCD5B /* PRPCircleGestureRecognizer.m */,
 				AB3C92121633574A00956A33 /* CMNBezelSwipeGestureRecognizer.h */,
 				AB3C92131633574A00956A33 /* CMNBezelSwipeGestureRecognizer.m */,
+				ABB0A396163361DC00ED2C74 /* Default-568h@2x.png */,
 				AB6ADCF71586F7050053407F /* Supporting Files */,
 			);
 			path = GestureExample;

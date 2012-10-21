@@ -20,6 +20,7 @@
 		AB6ADD131586F7050053407F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB6ADD111586F7050053407F /* InfoPlist.strings */; };
 		AB6ADD161586F7060053407F /* GestureExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6ADD151586F7060053407F /* GestureExampleTests.m */; };
 		AB6ADD221586F7590053407F /* CMNDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6ADD201586F7590053407F /* CMNDisplayViewController.m */; };
+		ABB0A397163361DC00ED2C74 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB0A396163361DC00ED2C74 /* Default-568h@2x.png */; };
 		ABC6BD981586F7B30071408C /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABC6BD971586F7B30071408C /* Storyboard.storyboard */; };
 		ABFC1D3B1586FF1F00FCCD5B /* PRPCircleGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFC1D3A1586FF1F00FCCD5B /* PRPCircleGestureRecognizer.m */; };
 		ABFCDFD4158A549200D9624E /* TrackingGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFCDFD3158A549200D9624E /* TrackingGestureRecognizer.m */; };
@@ -56,6 +57,7 @@
 		AB6ADD151586F7060053407F /* GestureExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GestureExampleTests.m; sourceTree = "<group>"; };
 		AB6ADD1F1586F7590053407F /* CMNDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMNDisplayViewController.h; sourceTree = "<group>"; };
 		AB6ADD201586F7590053407F /* CMNDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMNDisplayViewController.m; sourceTree = "<group>"; };
+		ABB0A396163361DC00ED2C74 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		ABC6BD971586F7B30071408C /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		ABFC1D391586FF1F00FCCD5B /* PRPCircleGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRPCircleGestureRecognizer.h; sourceTree = "<group>"; };
 		ABFC1D3A1586FF1F00FCCD5B /* PRPCircleGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRPCircleGestureRecognizer.m; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 		AB6ADCE11586F7050053407F = {
 			isa = PBXGroup;
 			children = (
+				ABB0A396163361DC00ED2C74 /* Default-568h@2x.png */,
 				AB6ADCF61586F7050053407F /* GestureExample */,
 				AB6ADD0E1586F7050053407F /* GestureExampleTests */,
 				AB6ADCEF1586F7050053407F /* Frameworks */,
@@ -240,6 +243,7 @@
 			files = (
 				AB6ADCFB1586F7050053407F /* InfoPlist.strings in Resources */,
 				ABC6BD981586F7B30071408C /* Storyboard.storyboard in Resources */,
+				ABB0A397163361DC00ED2C74 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,7 +376,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GestureExample/GestureExample-Prefix.pch";
 				INFOPLIST_FILE = "GestureExample/GestureExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -383,7 +389,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GestureExample/GestureExample-Prefix.pch";
 				INFOPLIST_FILE = "GestureExample/GestureExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

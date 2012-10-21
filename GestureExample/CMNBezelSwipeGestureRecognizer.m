@@ -11,14 +11,20 @@
 
 @implementation CMNBezelSwipeGestureRecognizer {
     CGPoint startPoint;
-    NSTimer *timer;
+    NSTimer *expireTimer;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     startPoint = [[touches anyObject] locationInView:self.view];
-    [timer invalidate];
-    timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(timerFired) userInfo:nil repeats:NO];
+
+    [expireTimer invalidate];
+    expireTimer = [NSTimer scheduledTimerWithTimeInterval:0.5
+                                                   target:self
+                                                 selector:@selector(gestureExpired)
+                                                 userInfo:nil
+                                                  repeats:NO];
+
     if (startPoint.y < self.view.bounds.size.height - 10) {
         self.state = UIGestureRecognizerStateFailed;
     }
@@ -28,29 +34,26 @@
 {
     CGPoint newPoint = [[touches anyObject] locationInView:self.view];
 
-    if (newPoint.y < startPoint.y - 40) {
-        [timer invalidate];
+    CGFloat height = self.view.bounds.size.height;
+    if (newPoint.y < startPoint.y - (height / 10)) {
+        [expireTimer invalidate];
         self.state = UIGestureRecognizerStateRecognized;
     }
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if (self.state == UIGestureRecognizerStateRecognized) {
-        self.state = UIGestureRecognizerStateEnded;
-    } else {
-        self.state = UIGestureRecognizerStateFailed;
-    }
-    [timer invalidate];
+    [expireTimer invalidate];
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
     self.state = UIGestureRecognizerStateFailed;
-    [timer invalidate];
+
+    [expireTimer invalidate];
 }
 
-- (void)timerFired
+- (void)gestureExpired
 {
     self.state = UIGestureRecognizerStateFailed;
 }

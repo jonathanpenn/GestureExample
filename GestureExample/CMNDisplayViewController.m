@@ -3,6 +3,22 @@
 #import "PRPCircleGestureRecognizer.h"
 #import "CMNBezelSwipeGestureRecognizer.h"
 
+@interface CMNDisplayViewController ()
+<UIGestureRecognizerDelegate>
+
+@property (nonatomic, weak) IBOutlet UILabel *trackingStateLabel;
+@property (nonatomic, weak) IBOutlet UILabel *tapStateLabel;
+@property (nonatomic, weak) IBOutlet UILabel *longPressStateLabel;
+@property (nonatomic, weak) IBOutlet UILabel *swipeStateLabel;
+@property (nonatomic, weak) IBOutlet UILabel *rotationStateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bezelSwipeLabel;
+@property (nonatomic, weak) IBOutlet UILabel *circleStateLabel;
+@property (nonatomic, weak) IBOutlet UILabel *triggeredLabel;
+
+@property (nonatomic, strong) IBOutletCollection(UILabel) NSMutableArray *fieldsToClear;
+
+@end
+
 @implementation CMNDisplayViewController
 {
     TrackingGestureRecognizer *_trackingRecognizer;
@@ -25,60 +41,43 @@
 
 #pragma mark - Setup
 
-- (void)clearFields
-{
-    for (UILabel *field in self.fieldsToClear) {
-        field.text = nil;
-    }
-}
-
-- (void)removeDefaultGestureRecognizers
-{
-    for (UIGestureRecognizer *recognizer in self.tableView.gestureRecognizers) {
-        [self.tableView removeGestureRecognizer:recognizer];
-    }
-}
-
 - (void)setupGestureRecognizers
 {
-    [self removeDefaultGestureRecognizers];
-
     _trackingRecognizer = [[TrackingGestureRecognizer alloc] initWithTarget:self action:@selector(trackingRecognizerFired:)];
-    [_trackingRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
-    _trackingRecognizer.delegate = self;
     [self.tableView addGestureRecognizer:_trackingRecognizer];
+    _trackingRecognizer.delegate = self;
+    [_trackingRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
 
     _tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapRecognizerFired:)];
-    [_tapRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
-    _tapRecognizer.delegate = self;
     [self.tableView addGestureRecognizer:_tapRecognizer];
-    
+    _tapRecognizer.delegate = self;
+    [_tapRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
+
     _longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressRecognizerFired:)];
-    [_longPressRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
-    _longPressRecognizer.delegate = self;
     [self.tableView addGestureRecognizer:_longPressRecognizer];
-    
+    _longPressRecognizer.delegate = self;
+    [_longPressRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
+
     _swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRecognizerFired:)];
     _swipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight;
-    [_swipeRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
-    _swipeRecognizer.delegate = self;
     [self.tableView addGestureRecognizer:_swipeRecognizer];
-    
+    _swipeRecognizer.delegate = self;
+    [_swipeRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
+
     _rotationRecognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotationRecognizerFired:)];
-    [_rotationRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
-    _rotationRecognizer.delegate = self;
     [self.tableView addGestureRecognizer:_rotationRecognizer];
+    _rotationRecognizer.delegate = self;
+    [_rotationRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
 
     _circleRecognizer = [[PRPCircleGestureRecognizer alloc] initWithTarget:self action:@selector(circleRecognizerFired:)];
-    [_circleRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
-    _circleRecognizer.delegate = self;
     [self.tableView addGestureRecognizer:_circleRecognizer];
+    _circleRecognizer.delegate = self;
+    [_circleRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
 
     _bezelSwipeRecognizer = [[CMNBezelSwipeGestureRecognizer alloc] initWithTarget:self action:@selector(bezelRecognizerFired:)];
-    [_bezelSwipeRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
+    [self.tableView addGestureRecognizer:_bezelSwipeRecognizer];
     _bezelSwipeRecognizer.delegate = self;
-    [[UIApplication sharedApplication].windows[0] addGestureRecognizer:_bezelSwipeRecognizer];
-
+    [_bezelSwipeRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
@@ -120,8 +119,9 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
 
 - (void)rotationRecognizerFired:(UIRotationGestureRecognizer *)recognizer
 {
-    _rotationDataLabel.text = [NSString stringWithFormat:@"rotation: %0.2f, velocity: %0.2f", recognizer.rotation, recognizer.velocity];
-    [self triggerMessage:@"Rotated!"];
+    NSString *text = [NSString stringWithFormat:@"Rotated! (r: %0.2f, v: %0.2f)",
+                      recognizer.rotation, recognizer.velocity];
+    [self triggerMessage:text];
 }
 
 - (void)bezelRecognizerFired:(CMNBezelSwipeGestureRecognizer *)recognizer
@@ -191,9 +191,11 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
     }
 }
 
-
-- (void)viewDidUnload {
-    [self setBezelSwipeLabel:nil];
-    [super viewDidUnload];
+- (void)clearFields
+{
+    for (UILabel *field in self.fieldsToClear) {
+        field.text = nil;
+    }
 }
+
 @end

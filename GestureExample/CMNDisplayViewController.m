@@ -115,6 +115,7 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
 
 - (void)swipeRecognizerFired:(UISwipeGestureRecognizer *)recognizer
 {
+    // So, what happens if you swipe to the left on the right side?
     CGPoint swipeStart = [recognizer locationInView:self.view];
     if (swipeStart.x < self.view.bounds.size.width / 2) {
         [self triggerMessage:@"Swiped From Left!"];

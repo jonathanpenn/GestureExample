@@ -55,7 +55,6 @@
 {
     [super touchesCancelled:touches withEvent:event];
     self.state = UIGestureRecognizerStateFailed;
-
     [expireTimer invalidate];
 }
 

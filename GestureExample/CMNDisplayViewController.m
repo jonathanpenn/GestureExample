@@ -43,39 +43,33 @@
 
 - (void)setupGestureRecognizers
 {
+    _tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapRecognizerFired:)];
+    [self.tableView addGestureRecognizer:_tapRecognizer];
+    [_tapRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
+
     _trackingRecognizer = [[TrackingGestureRecognizer alloc] initWithTarget:self action:@selector(trackingRecognizerFired:)];
     [self.tableView addGestureRecognizer:_trackingRecognizer];
     _trackingRecognizer.delegate = self;
 
-    _tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapRecognizerFired:)];
-    [self.tableView addGestureRecognizer:_tapRecognizer];
-    _tapRecognizer.delegate = self;
-    [_tapRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
-
     _longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressRecognizerFired:)];
     [self.tableView addGestureRecognizer:_longPressRecognizer];
-    _longPressRecognizer.delegate = self;
     [_longPressRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
 
     _swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRecognizerFired:)];
     _swipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight;
     [self.tableView addGestureRecognizer:_swipeRecognizer];
-    _swipeRecognizer.delegate = self;
     [_swipeRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
 
     _rotationRecognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotationRecognizerFired:)];
     [self.tableView addGestureRecognizer:_rotationRecognizer];
-    _rotationRecognizer.delegate = self;
     [_rotationRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
 
     _circleRecognizer = [[PRPCircleGestureRecognizer alloc] initWithTarget:self action:@selector(circleRecognizerFired:)];
     [self.tableView addGestureRecognizer:_circleRecognizer];
-    _circleRecognizer.delegate = self;
     [_circleRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
 
     _bezelSwipeRecognizer = [[CMNBezelSwipeGestureRecognizer alloc] initWithTarget:self action:@selector(bezelRecognizerFired:)];
     [self.tableView addGestureRecognizer:_bezelSwipeRecognizer];
-    _bezelSwipeRecognizer.delegate = self;
     [_bezelSwipeRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
 }
 
@@ -103,7 +97,7 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
                                     stateText];
 }
 
-- (void)tapRecognizerFired:(UITapGestureRecognizer *)recognizer
+- (IBAction)tapRecognizerFired:(UITapGestureRecognizer *)recognizer
 {
     [self triggerMessage:@"Tapped!"];
 }
@@ -115,13 +109,14 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
 
 - (void)swipeRecognizerFired:(UISwipeGestureRecognizer *)recognizer
 {
-    // So, what happens if you swipe to the left on the right side?
     CGPoint swipeStart = [recognizer locationInView:self.view];
     if (swipeStart.x < self.view.bounds.size.width / 2) {
         [self triggerMessage:@"Swiped From Left!"];
     } else {
         [self triggerMessage:@"Swiped From Right!"];
     }
+    
+    // So, what happens if you swipe to the left on the right side?
 }
 
 - (void)rotationRecognizerFired:(UIRotationGestureRecognizer *)recognizer
@@ -150,7 +145,10 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
 
 #pragma mark - Gesture Recognizer State Monitoring
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(UIGestureRecognizer *)recognizer change:(NSDictionary *)change context:(void *)context
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(UIGestureRecognizer *)recognizer
+                        change:(NSDictionary *)change
+                       context:(void *)context
 {
     [self printStateChangeOfGestureRecognizer:recognizer];
 }

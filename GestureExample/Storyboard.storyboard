@@ -199,7 +199,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GJW-DI-pKp" userLabel="Message">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Recognizer Message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GJW-DI-pKp" userLabel="Message">
                                                     <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -216,7 +216,6 @@
                         <connections>
                             <outlet property="dataSource" destination="HVb-N9-sZR" id="vfb-EE-b1O"/>
                             <outlet property="delegate" destination="HVb-N9-sZR" id="yna-0w-0gd"/>
-                            <outletCollection property="gestureRecognizers" destination="2k4-ox-FvC" appends="YES" id="RaX-FI-rSu"/>
                         </connections>
                     </tableView>
                     <connections>
@@ -239,14 +238,6 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mIa-Fm-8qX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="2k4-ox-FvC">
-                    <connections>
-                        <action selector="longPressRecognizerFired:" destination="HVb-N9-sZR" id="mEN-Sj-Fta"/>
-                        <outlet property="delegate" destination="HVb-N9-sZR" id="M4v-OQ-Sbx"/>
-                    </connections>
-                </pongPressGestureRecognizer>
-                <tapGestureRecognizer id="sb7-CH-oM2"/>
-                <rotationGestureRecognizer id="rJQ-EX-3mE"/>
             </objects>
             <point key="canvasLocation" x="329" y="54"/>
         </scene>
@@ -255,6 +246,7 @@
         <class className="CMNDisplayViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CMNDisplayViewController.h"/>
             <relationships>
+                <relationship kind="action" name="tapRecognizerFired:" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="outlet" name="bezelSwipeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="circleStateLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="longPressStateLabel" candidateClass="UILabel"/>

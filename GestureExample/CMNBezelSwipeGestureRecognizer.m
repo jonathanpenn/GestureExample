@@ -25,23 +25,24 @@
                                                  selector:@selector(gestureExpired)
                                                  userInfo:nil
                                                   repeats:NO];
-
-    if (startPoint.y < self.view.bounds.size.height - 10) {
-        self.state = UIGestureRecognizerStateFailed;
-    }
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [super touchesMoved:touches withEvent:event];
-    if (self.state == UIGestureRecognizerStateFailed || self.state == UIGestureRecognizerStateRecognized) return;
-
-    CGPoint newPoint = [[touches anyObject] locationInView:self.view];
 
     CGFloat height = self.view.bounds.size.height;
-    if (newPoint.y < startPoint.y - (height / 10)) {
+
+    if (startPoint.y < height - 20) {
         [expireTimer invalidate];
-        self.state = UIGestureRecognizerStateRecognized;
+        self.state = UIGestureRecognizerStateFailed;
+    } else {
+        CGPoint newPoint = [[touches anyObject] locationInView:self.view];
+
+        if (newPoint.y < startPoint.y - (height / 10)) {
+            [expireTimer invalidate];
+            self.state = UIGestureRecognizerStateRecognized;
+        }
     }
 }
 
@@ -54,8 +55,8 @@
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [super touchesCancelled:touches withEvent:event];
-    self.state = UIGestureRecognizerStateFailed;
     [expireTimer invalidate];
+    self.state = UIGestureRecognizerStateFailed;
 }
 
 - (void)gestureExpired

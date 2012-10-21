@@ -46,7 +46,6 @@
     _trackingRecognizer = [[TrackingGestureRecognizer alloc] initWithTarget:self action:@selector(trackingRecognizerFired:)];
     [self.tableView addGestureRecognizer:_trackingRecognizer];
     _trackingRecognizer.delegate = self;
-    [_trackingRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
 
     _tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapRecognizerFired:)];
     [self.tableView addGestureRecognizer:_tapRecognizer];
@@ -89,12 +88,19 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
 
 #pragma mark - Gesture Recognizer Actions
 
-- (void)trackingRecognizerFired:(UIPanGestureRecognizer *)recognizer
+- (void)trackingRecognizerFired:(TrackingGestureRecognizer *)recognizer
 {
     if (recognizer.state == UIGestureRecognizerStateBegan) {
         [self clearFields];
-        self.trackingStateLabel.text = @"Began";
     }
+
+    NSString *stateText = [self nameFromState:recognizer.state];
+    CGPoint point = [recognizer locationInView:self.tableView];
+
+    self.trackingStateLabel.text = [NSString stringWithFormat:@"{%.f, %.f} %@",
+                                    point.x,
+                                    point.y,
+                                    stateText];
 }
 
 - (void)tapRecognizerFired:(UITapGestureRecognizer *)recognizer
@@ -152,9 +158,7 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
 {
     NSString *stateName = [self nameFromState:recognizer.state];
 
-    if (recognizer == _trackingRecognizer) {
-        self.trackingStateLabel.text = stateName;
-    } else if (recognizer == _tapRecognizer) {
+    if (recognizer == _tapRecognizer) {
         self.tapStateLabel.text = stateName;
     } else if (recognizer == _longPressRecognizer) {
         self.longPressStateLabel.text = stateName;

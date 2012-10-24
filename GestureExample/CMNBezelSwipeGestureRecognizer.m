@@ -17,14 +17,18 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [super touchesBegan:touches withEvent:event];
+    CGFloat height = self.view.bounds.size.height;
     startPoint = [[touches anyObject] locationInView:self.view];
-
-    [expireTimer invalidate];
-    expireTimer = [NSTimer scheduledTimerWithTimeInterval:0.5
-                                                   target:self
-                                                 selector:@selector(gestureExpired)
-                                                 userInfo:nil
-                                                  repeats:NO];
+    if (startPoint.y < height - 20) {
+        self.state = UIGestureRecognizerStateFailed;
+    } else {
+        [expireTimer invalidate];
+        expireTimer = [NSTimer scheduledTimerWithTimeInterval:0.5
+                                                       target:self
+                                                     selector:@selector(gestureExpired)
+                                                     userInfo:nil
+                                                      repeats:NO];
+    }
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -33,16 +37,11 @@
 
     CGFloat height = self.view.bounds.size.height;
 
-    if (startPoint.y < height - 20) {
-        [expireTimer invalidate];
-        self.state = UIGestureRecognizerStateFailed;
-    } else {
-        CGPoint newPoint = [[touches anyObject] locationInView:self.view];
+    CGPoint newPoint = [[touches anyObject] locationInView:self.view];
 
-        if (newPoint.y < startPoint.y - (height / 10)) {
-            [expireTimer invalidate];
-            self.state = UIGestureRecognizerStateRecognized;
-        }
+    if (newPoint.y < startPoint.y - (height / 10)) {
+        [expireTimer invalidate];
+        self.state = UIGestureRecognizerStateRecognized;
     }
 }
 

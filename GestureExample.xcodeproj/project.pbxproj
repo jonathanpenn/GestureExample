@@ -14,27 +14,12 @@
 		AB6ADCFB1586F7050053407F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB6ADCF91586F7050053407F /* InfoPlist.strings */; };
 		AB6ADCFD1586F7050053407F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6ADCFC1586F7050053407F /* main.m */; };
 		AB6ADD011586F7050053407F /* CMNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6ADD001586F7050053407F /* CMNAppDelegate.m */; };
-		AB6ADD091586F7050053407F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6ADD081586F7050053407F /* SenTestingKit.framework */; };
-		AB6ADD0A1586F7050053407F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6ADCF01586F7050053407F /* UIKit.framework */; };
-		AB6ADD0B1586F7050053407F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6ADCF21586F7050053407F /* Foundation.framework */; };
-		AB6ADD131586F7050053407F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB6ADD111586F7050053407F /* InfoPlist.strings */; };
-		AB6ADD161586F7060053407F /* GestureExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6ADD151586F7060053407F /* GestureExampleTests.m */; };
 		AB6ADD221586F7590053407F /* CMNDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6ADD201586F7590053407F /* CMNDisplayViewController.m */; };
 		ABB0A397163361DC00ED2C74 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB0A396163361DC00ED2C74 /* Default-568h@2x.png */; };
 		ABC6BD981586F7B30071408C /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABC6BD971586F7B30071408C /* Storyboard.storyboard */; };
 		ABFC1D3B1586FF1F00FCCD5B /* PRPCircleGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFC1D3A1586FF1F00FCCD5B /* PRPCircleGestureRecognizer.m */; };
 		ABFCDFD4158A549200D9624E /* TrackingGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFCDFD3158A549200D9624E /* TrackingGestureRecognizer.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		AB6ADD0C1586F7050053407F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AB6ADCE31586F7050053407F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AB6ADCEB1586F7050053407F;
-			remoteInfo = GestureExample;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		AB3C92121633574A00956A33 /* CMNBezelSwipeGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMNBezelSwipeGestureRecognizer.h; sourceTree = "<group>"; };
@@ -49,12 +34,6 @@
 		AB6ADCFE1586F7050053407F /* GestureExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GestureExample-Prefix.pch"; sourceTree = "<group>"; };
 		AB6ADCFF1586F7050053407F /* CMNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMNAppDelegate.h; sourceTree = "<group>"; };
 		AB6ADD001586F7050053407F /* CMNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMNAppDelegate.m; sourceTree = "<group>"; };
-		AB6ADD071586F7050053407F /* GestureExampleTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GestureExampleTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB6ADD081586F7050053407F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		AB6ADD101586F7050053407F /* GestureExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GestureExampleTests-Info.plist"; sourceTree = "<group>"; };
-		AB6ADD121586F7050053407F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		AB6ADD141586F7060053407F /* GestureExampleTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GestureExampleTests.h; sourceTree = "<group>"; };
-		AB6ADD151586F7060053407F /* GestureExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GestureExampleTests.m; sourceTree = "<group>"; };
 		AB6ADD1F1586F7590053407F /* CMNDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMNDisplayViewController.h; sourceTree = "<group>"; };
 		AB6ADD201586F7590053407F /* CMNDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMNDisplayViewController.m; sourceTree = "<group>"; };
 		ABB0A396163361DC00ED2C74 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -76,16 +55,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AB6ADD031586F7050053407F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AB6ADD091586F7050053407F /* SenTestingKit.framework in Frameworks */,
-				AB6ADD0A1586F7050053407F /* UIKit.framework in Frameworks */,
-				AB6ADD0B1586F7050053407F /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -93,7 +62,6 @@
 			isa = PBXGroup;
 			children = (
 				AB6ADCF61586F7050053407F /* GestureExample */,
-				AB6ADD0E1586F7050053407F /* GestureExampleTests */,
 				AB6ADCEF1586F7050053407F /* Frameworks */,
 				AB6ADCED1586F7050053407F /* Products */,
 			);
@@ -103,7 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				AB6ADCEC1586F7050053407F /* GestureExample.app */,
-				AB6ADD071586F7050053407F /* GestureExampleTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,7 +81,6 @@
 				AB6ADCF01586F7050053407F /* UIKit.framework */,
 				AB6ADCF21586F7050053407F /* Foundation.framework */,
 				AB6ADCF41586F7050053407F /* CoreGraphics.framework */,
-				AB6ADD081586F7050053407F /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -150,25 +116,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		AB6ADD0E1586F7050053407F /* GestureExampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				AB6ADD141586F7060053407F /* GestureExampleTests.h */,
-				AB6ADD151586F7060053407F /* GestureExampleTests.m */,
-				AB6ADD0F1586F7050053407F /* Supporting Files */,
-			);
-			path = GestureExampleTests;
-			sourceTree = "<group>";
-		};
-		AB6ADD0F1586F7050053407F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				AB6ADD101586F7050053407F /* GestureExampleTests-Info.plist */,
-				AB6ADD111586F7050053407F /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -189,25 +136,6 @@
 			productReference = AB6ADCEC1586F7050053407F /* GestureExample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AB6ADD061586F7050053407F /* GestureExampleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AB6ADD1C1586F7060053407F /* Build configuration list for PBXNativeTarget "GestureExampleTests" */;
-			buildPhases = (
-				AB6ADD021586F7050053407F /* Sources */,
-				AB6ADD031586F7050053407F /* Frameworks */,
-				AB6ADD041586F7050053407F /* Resources */,
-				AB6ADD051586F7050053407F /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AB6ADD0D1586F7050053407F /* PBXTargetDependency */,
-			);
-			name = GestureExampleTests;
-			productName = GestureExampleTests;
-			productReference = AB6ADD071586F7050053407F /* GestureExampleTests.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -215,7 +143,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = CMN;
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Navel Labs";
 			};
 			buildConfigurationList = AB6ADCE61586F7050053407F /* Build configuration list for PBXProject "GestureExample" */;
@@ -231,7 +159,6 @@
 			projectRoot = "";
 			targets = (
 				AB6ADCEB1586F7050053407F /* GestureExample */,
-				AB6ADD061586F7050053407F /* GestureExampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -247,31 +174,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AB6ADD041586F7050053407F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AB6ADD131586F7050053407F /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		AB6ADD051586F7050053407F /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AB6ADCE81586F7050053407F /* Sources */ = {
@@ -287,37 +190,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AB6ADD021586F7050053407F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AB6ADD161586F7060053407F /* GestureExampleTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		AB6ADD0D1586F7050053407F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AB6ADCEB1586F7050053407F /* GestureExample */;
-			targetProxy = AB6ADD0C1586F7050053407F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AB6ADCF91586F7050053407F /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				AB6ADCFA1586F7050053407F /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		AB6ADD111586F7050053407F /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AB6ADD121586F7050053407F /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -329,8 +208,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -345,8 +227,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -354,8 +236,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -363,9 +248,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -376,9 +261,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GestureExample/GestureExample-Prefix.pch";
 				INFOPLIST_FILE = "GestureExample/GestureExample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -389,44 +272,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GestureExample/GestureExample-Prefix.pch";
 				INFOPLIST_FILE = "GestureExample/GestureExample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		AB6ADD1D1586F7060053407F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GestureExample.app/GestureExample";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GestureExample/GestureExample-Prefix.pch";
-				INFOPLIST_FILE = "GestureExampleTests/GestureExampleTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		AB6ADD1E1586F7060053407F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GestureExample.app/GestureExample";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GestureExample/GestureExample-Prefix.pch";
-				INFOPLIST_FILE = "GestureExampleTests/GestureExampleTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
@@ -447,15 +294,6 @@
 			buildConfigurations = (
 				AB6ADD1A1586F7060053407F /* Debug */,
 				AB6ADD1B1586F7060053407F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AB6ADD1C1586F7060053407F /* Build configuration list for PBXNativeTarget "GestureExampleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AB6ADD1D1586F7060053407F /* Debug */,
-				AB6ADD1E1586F7060053407F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

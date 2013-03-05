@@ -63,6 +63,7 @@
 //
 //    _swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRecognizerFired:)];
 //    _swipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight;
+//    _swipeRecognizer.numberOfTouchesRequired = 2;
 //    [self.view addGestureRecognizer:_swipeRecognizer];
 //    [_swipeRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
 //
@@ -78,7 +79,7 @@
 //    _pinchRecognizer.delegate = self;
 //
 //    _circleRecognizer = [[PRPCircleGestureRecognizer alloc] initWithTarget:self action:@selector(circleRecognizerFired:)];
-//    [self.view addGestureRecognizer:_circleRecognizer];
+//    [self.triggerMessage addGestureRecognizer:_circleRecognizer];
 //    [_circleRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
 //
 //    // Adding this to the *window*

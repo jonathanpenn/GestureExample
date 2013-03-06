@@ -18,19 +18,18 @@
 
 @property (nonatomic, strong) IBOutletCollection(UILabel) NSMutableArray *fieldsToClear;
 
+@property (nonatomic, strong) TrackingGestureRecognizer *trackingRecognizer;
+@property (nonatomic, strong) UITapGestureRecognizer *tapRecognizer;
+@property (nonatomic, strong) UILongPressGestureRecognizer *longPressRecognizer;
+@property (nonatomic, strong) UISwipeGestureRecognizer *swipeRecognizer;
+@property (nonatomic, strong) UIRotationGestureRecognizer *rotationRecognizer;
+@property (nonatomic, strong) UIPinchGestureRecognizer *pinchRecognizer;
+@property (nonatomic, strong) CMNBezelSwipeGestureRecognizer *bezelSwipeRecognizer;
+@property (nonatomic, strong) PRPCircleGestureRecognizer *circleRecognizer;
+
 @end
 
 @implementation CMNDisplayViewController
-{
-    TrackingGestureRecognizer *_trackingRecognizer;
-    UITapGestureRecognizer *_tapRecognizer;
-    UILongPressGestureRecognizer *_longPressRecognizer;
-    UISwipeGestureRecognizer *_swipeRecognizer;
-    UIRotationGestureRecognizer *_rotationRecognizer;
-    UIPinchGestureRecognizer *_pinchRecognizer;
-    CMNBezelSwipeGestureRecognizer *_bezelSwipeRecognizer;
-    PRPCircleGestureRecognizer *_circleRecognizer;
-}
 
 - (void)viewWillAppear:(BOOL)animated
 {

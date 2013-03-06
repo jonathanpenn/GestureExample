@@ -43,53 +43,53 @@
 
 - (void)setupGestureRecognizers
 {
-    _trackingRecognizer = [[TrackingGestureRecognizer alloc] initWithTarget:self action:@selector(trackingRecognizerFired:)];
-    [self.view addGestureRecognizer:_trackingRecognizer];
-    _trackingRecognizer.delegate = self;
+    self.trackingRecognizer = [[TrackingGestureRecognizer alloc] initWithTarget:self action:@selector(trackingRecognizerFired:)];
+    [self.view addGestureRecognizer:self.trackingRecognizer];
+    self.trackingRecognizer.delegate = self;
 
-//    _tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapRecognizerFired:)];
-//    [self.view addGestureRecognizer:_tapRecognizer];
-//    [_tapRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
+//    self.tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapRecognizerFired:)];
+//    [self.view addGestureRecognizer:self.tapRecognizer];
+//    [self.tapRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
 //
-//    _longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressRecognizerFired:)];
-//    [self.view addGestureRecognizer:_longPressRecognizer];
-//    [_longPressRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
+//    self.longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressRecognizerFired:)];
+//    [self.view addGestureRecognizer:self.longPressRecognizer];
+//    [self.longPressRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
 //
-//    _swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRecognizerFired:)];
-//    _swipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight;
-//    _swipeRecognizer.numberOfTouchesRequired = 2;
-//    [self.view addGestureRecognizer:_swipeRecognizer];
-//    [_swipeRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
+//    self.swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRecognizerFired:)];
+//    self.swipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight;
+//    self.swipeRecognizer.numberOfTouchesRequired = 2;
+//    [self.view addGestureRecognizer:self.swipeRecognizer];
+//    [self.swipeRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
 //
-//    _rotationRecognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotationRecognizerFired:)];
-//    [self.view addGestureRecognizer:_rotationRecognizer];
-//    [_rotationRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
+//    self.rotationRecognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotationRecognizerFired:)];
+//    [self.view addGestureRecognizer:self.rotationRecognizer];
+//    [self.rotationRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
 //
-//    _pinchRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchRecognizerFired:)];
-//    [self.view addGestureRecognizer:_pinchRecognizer];
-//    [_pinchRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
+//    self.pinchRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchRecognizerFired:)];
+//    [self.view addGestureRecognizer:self.pinchRecognizer];
+//    [self.pinchRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
 //
-//    _rotationRecognizer.delegate = self;
-//    _pinchRecognizer.delegate = self;
+//    self.rotationRecognizer.delegate = self;
+//    self.pinchRecognizer.delegate = self;
 //
-//    _circleRecognizer = [[PRPCircleGestureRecognizer alloc] initWithTarget:self action:@selector(circleRecognizerFired:)];
-//    [self.triggerMessage addGestureRecognizer:_circleRecognizer];
-//    [_circleRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
+//    self.circleRecognizer = [[PRPCircleGestureRecognizer alloc] initWithTarget:self action:@selector(circleRecognizerFired:)];
+//    [self.triggerMessage addGestureRecognizer:self.circleRecognizer];
+//    [self.circleRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
 //
 //    // Adding this to the *window*
-//    _bezelSwipeRecognizer = [[CMNBezelSwipeGestureRecognizer alloc] initWithTarget:self action:@selector(bezelRecognizerFired:)];
-//    [[[UIApplication sharedApplication] windows][0] addGestureRecognizer:_bezelSwipeRecognizer];
-//    [_bezelSwipeRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
+//    self.bezelSwipeRecognizer = [[CMNBezelSwipeGestureRecognizer alloc] initWithTarget:self action:@selector(bezelRecognizerFired:)];
+//    [[[UIApplication sharedApplication] windows][0] addGestureRecognizer:self.bezelSwipeRecognizer];
+//    [self.bezelSwipeRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
 shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
-    return gestureRecognizer == _trackingRecognizer || otherGestureRecognizer == _trackingRecognizer;
+    return gestureRecognizer == self.trackingRecognizer || otherGestureRecognizer == self.trackingRecognizer;
 
-//    return (gestureRecognizer == _trackingRecognizer || otherGestureRecognizer == _trackingRecognizer)
-//        || (gestureRecognizer == _rotationRecognizer && otherGestureRecognizer == _pinchRecognizer)
-//        || (gestureRecognizer == _pinchRecognizer && otherGestureRecognizer == _rotationRecognizer);
+//    return (gestureRecognizer == self.trackingRecognizer || otherGestureRecognizer == self.trackingRecognizer)
+//        || (gestureRecognizer == self.rotationRecognizer && otherGestureRecognizer == self.pinchRecognizer)
+//        || (gestureRecognizer == self.pinchRecognizer && otherGestureRecognizer == self.rotationRecognizer);
 }
 
 
@@ -191,19 +191,19 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
 {
     NSString *stateName = [self nameFromState:recognizer.state];
 
-    if (recognizer == _tapRecognizer) {
+    if (recognizer == self.tapRecognizer) {
         self.tapStateLabel.text = stateName;
-    } else if (recognizer == _longPressRecognizer) {
+    } else if (recognizer == self.longPressRecognizer) {
         self.longPressStateLabel.text = stateName;
-    } else if (recognizer == _swipeRecognizer) {
+    } else if (recognizer == self.swipeRecognizer) {
         self.swipeStateLabel.text = stateName;
-    } else if (recognizer == _rotationRecognizer) {
+    } else if (recognizer == self.rotationRecognizer) {
         self.rotationStateLabel.text = stateName;
-    } else if (recognizer == _pinchRecognizer) {
+    } else if (recognizer == self.pinchRecognizer) {
         self.pinchStateLabel.text = stateName;
-    } else if (recognizer == _bezelSwipeRecognizer) {
+    } else if (recognizer == self.bezelSwipeRecognizer) {
         self.bezelSwipeLabel.text = stateName;
-    } else if (recognizer == _circleRecognizer) {
+    } else if (recognizer == self.circleRecognizer) {
         self.circleStateLabel.text = stateName;
     } else {
         NSAssert(false, @"Unknown gesture recognizer %@", recognizer);

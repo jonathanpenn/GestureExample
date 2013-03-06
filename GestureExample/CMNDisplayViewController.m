@@ -34,13 +34,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self clearFields];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
     [self setupGestureRecognizers];
+    [self clearFields];
 }
 
 
@@ -83,7 +78,7 @@
 //
 //    // Adding this to the *window*
 //    _bezelSwipeRecognizer = [[CMNBezelSwipeGestureRecognizer alloc] initWithTarget:self action:@selector(bezelRecognizerFired:)];
-//    [self.view.window addGestureRecognizer:_bezelSwipeRecognizer];
+//    [[[UIApplication sharedApplication] windows][0] addGestureRecognizer:_bezelSwipeRecognizer];
 //    [_bezelSwipeRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
 }
 

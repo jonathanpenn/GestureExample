@@ -31,10 +31,16 @@
 
 @implementation CMNDisplayViewController
 
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self setupGestureRecognizers];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self setupGestureRecognizers];
     [self clearFields];
 }
 

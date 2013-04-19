@@ -3,6 +3,16 @@
 #import "PRPCircleGestureRecognizer.h"
 #import "CMNBezelSwipeGestureRecognizer.h"
 
+@interface UIGestureRecognizer (ExampleUtils)
+- (void) updateLabel:(UILabel *) label withText:(NSString *) text_update ifEquals:(UIGestureRecognizer *) tocheck;
+@end
+
+@implementation UIGestureRecognizer (ExampleUtils)
+- (void) updateLabel:(UILabel *) label withText:(NSString *) text_update ifEquals:(UIGestureRecognizer *) tocheck {
+    (self == tocheck) && (label.text = text_update);
+}
+@end
+
 @interface CMNDisplayViewController ()
 <UIGestureRecognizerDelegate>
 
@@ -53,9 +63,9 @@
     [self.view addGestureRecognizer:self.trackingRecognizer];
     self.trackingRecognizer.delegate = self;
 
-//    self.tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapRecognizerFired:)];
-//    [self.view addGestureRecognizer:self.tapRecognizer];
-//    [self.tapRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
+    self.tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapRecognizerFired:)];
+    [self.view addGestureRecognizer:self.tapRecognizer];
+    [self.tapRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
 //
 //    self.longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressRecognizerFired:)];
 //    [self.view addGestureRecognizer:self.longPressRecognizer];
@@ -197,23 +207,34 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
 {
     NSString *stateName = [self nameFromState:recognizer.state];
 
-    if (recognizer == self.tapRecognizer) {
-        self.tapStateLabel.text = stateName;
-    } else if (recognizer == self.longPressRecognizer) {
-        self.longPressStateLabel.text = stateName;
-    } else if (recognizer == self.swipeRecognizer) {
-        self.swipeStateLabel.text = stateName;
-    } else if (recognizer == self.rotationRecognizer) {
-        self.rotationStateLabel.text = stateName;
-    } else if (recognizer == self.pinchRecognizer) {
-        self.pinchStateLabel.text = stateName;
-    } else if (recognizer == self.bezelSwipeRecognizer) {
-        self.bezelSwipeLabel.text = stateName;
-    } else if (recognizer == self.circleRecognizer) {
-        self.circleStateLabel.text = stateName;
-    } else {
-        NSAssert(false, @"Unknown gesture recognizer %@", recognizer);
-    }
+    [self.tapRecognizer updateLabel:self.tapStateLabel
+                           withText:stateName
+                           ifEquals:recognizer];
+    
+    [self.longPressRecognizer updateLabel:self.longPressStateLabel
+                                 withText:stateName
+                                 ifEquals:recognizer];
+
+    [self.swipeRecognizer updateLabel:self.swipeStateLabel
+                             withText:stateName
+                             ifEquals:recognizer];
+
+    [self.rotationRecognizer updateLabel:self.rotationStateLabel
+                                withText:stateName
+                                ifEquals:recognizer];
+
+    [self.pinchRecognizer updateLabel:self.pinchStateLabel
+                             withText:stateName
+                             ifEquals:recognizer];
+
+    [self.bezelSwipeRecognizer updateLabel:self.bezelSwipeLabel
+                                  withText:stateName
+                                  ifEquals:recognizer];
+
+    [self.circleRecognizer updateLabel:self.circleStateLabel
+                              withText:stateName
+                              ifEquals:recognizer];
+
 }
 
 - (NSString *)nameFromState:(UIGestureRecognizerState)state

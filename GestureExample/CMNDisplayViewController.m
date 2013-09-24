@@ -2,6 +2,7 @@
 #import "TrackingGestureRecognizer.h"
 #import "PRPCircleGestureRecognizer.h"
 #import "CMNRightBezelSwipeGestureRecognizer.h"
+#import "CMNRightBezelPanGestureRecognizer.h"
 
 @interface CMNDisplayViewController ()
 <UIGestureRecognizerDelegate>
@@ -24,7 +25,7 @@
 @property (nonatomic, strong) UISwipeGestureRecognizer *swipeRecognizer;
 @property (nonatomic, strong) UIRotationGestureRecognizer *rotationRecognizer;
 @property (nonatomic, strong) UIPinchGestureRecognizer *pinchRecognizer;
-@property (nonatomic, strong) CMNRightBezelSwipeGestureRecognizer *bezelSwipeRecognizer;
+@property (nonatomic, strong) id bezelRecognizer;
 @property (nonatomic, strong) PRPCircleGestureRecognizer *circleRecognizer;
 
 @end
@@ -83,9 +84,14 @@
 //    [self.circleRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
 //
 //    // Adding this to the *window*
-//    self.bezelSwipeRecognizer = [[CMNRightBezelSwipeGestureRecognizer alloc] initWithTarget:self action:@selector(bezelRecognizerFired:)];
-//    [[[UIApplication sharedApplication] windows][0] addGestureRecognizer:self.bezelSwipeRecognizer];
-//    [self.bezelSwipeRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
+//    self.bezelRecognizer = [[CMNRightBezelSwipeGestureRecognizer alloc] initWithTarget:self action:@selector(bezelRecognizerFired:)];
+//    [[[UIApplication sharedApplication] windows][0] addGestureRecognizer:self.bezelRecognizer];
+//    [self.bezelRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
+//
+//    // Some "continous *fun
+//    self.bezelRecognizer = [[CMNRightBezelPanGestureRecognizer alloc] initWithTarget:self action:@selector(bezelPanRecognizerFired:)];
+//    [[[UIApplication sharedApplication] windows][0] addGestureRecognizer:self.bezelRecognizer];
+//    [self.bezelRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
@@ -166,6 +172,21 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
     [self triggerBezelSurprise];
 }
 
+- (void)bezelPanRecognizerFired:(CMNRightBezelPanGestureRecognizer *)recognizer
+{
+    CGPoint point = [recognizer locationInView:self.view.window];
+    NSString *text = [NSString stringWithFormat:@"Bezel Pan! (x: %0.2f)", point.x];
+    [self triggerMessage:text];
+
+    if (recognizer.state == UIGestureRecognizerStateEnded || recognizer.state == UIGestureRecognizerStateFailed) {
+        [UIView animateWithDuration:0.3 animations:^{
+            [self showKittenAtX:self.view.window.bounds.size.width];
+        }];
+    } else {
+        [self showKittenAtX:point.x];
+    }
+}
+
 - (void)circleRecognizerFired:(PRPCircleGestureRecognizer *)recognizer
 {
     [self triggerMessage:@"Circle!"];
@@ -208,7 +229,7 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
         self.rotationStateLabel.text = stateName;
     } else if (recognizer == self.pinchRecognizer) {
         self.pinchStateLabel.text = stateName;
-    } else if (recognizer == self.bezelSwipeRecognizer) {
+    } else if (recognizer == self.bezelRecognizer) {
         self.bezelSwipeLabel.text = stateName;
     } else if (recognizer == self.circleRecognizer) {
         self.circleStateLabel.text = stateName;
@@ -243,17 +264,10 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
 }
 
 
-
-
 - (void)triggerBezelSurprise
 {
-    UIWindow *window = self.view.window;
-    UIImage *image = [UIImage imageNamed:@"surprise.png"];
-    UIImageView *view = [[UIImageView alloc] initWithImage:image];
-    view.center = CGPointMake(window.bounds.size.width + view.bounds.size.width,
-                              window.bounds.size.height/2);
-    [window addSubview:view];
-
+    [self addKittenViewIfNotThere];
+    UIImageView *view = (UIImageView *)[self.view.window viewWithTag:11223];
     [UIView animateWithDuration:0.3 animations:^{
         CGPoint center = view.center;
         center.x -= view.bounds.size.width;
@@ -266,11 +280,31 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
                 CGPoint center = view.center;
                 center.x += view.bounds.size.width;
                 view.center = center;
-            } completion:^(BOOL finished) {
-                [view removeFromSuperview];
             }];
         });
     }];
+}
+
+- (void)showKittenAtX:(CGFloat)x
+{
+    [self addKittenViewIfNotThere];
+    UIImageView *view = (UIImageView *)[self.view.window viewWithTag:11223];
+    CGRect frame = view.frame;
+    frame.origin.x = x;
+    view.frame = frame;
+}
+
+- (void)addKittenViewIfNotThere
+{
+    UIImageView *view = (UIImageView *)[self.view.window viewWithTag:11223];
+    if (view) return;
+    UIWindow *window = self.view.window;
+    UIImage *image = [UIImage imageNamed:@"surprise.png"];
+    view = [[UIImageView alloc] initWithImage:image];
+    view.tag = 11223;
+    view.center = CGPointMake(window.bounds.size.width + view.bounds.size.width,
+                              window.bounds.size.height/2);
+    [window addSubview:view];
 }
 
 @end

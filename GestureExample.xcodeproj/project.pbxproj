@@ -16,6 +16,7 @@
 		AB6ADD011586F7050053407F /* CMNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6ADD001586F7050053407F /* CMNAppDelegate.m */; };
 		AB6ADD221586F7590053407F /* CMNDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6ADD201586F7590053407F /* CMNDisplayViewController.m */; };
 		AB9092CA17F22BDC00F216F7 /* surprise.png in Resources */ = {isa = PBXBuildFile; fileRef = AB9092C917F22BDC00F216F7 /* surprise.png */; };
+		AB9092CD17F22DE000F216F7 /* CMNRightBezelPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB9092CC17F22DE000F216F7 /* CMNRightBezelPanGestureRecognizer.m */; };
 		ABB0A397163361DC00ED2C74 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB0A396163361DC00ED2C74 /* Default-568h@2x.png */; };
 		ABC6BD981586F7B30071408C /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABC6BD971586F7B30071408C /* Storyboard.storyboard */; };
 		ABFC1D3B1586FF1F00FCCD5B /* PRPCircleGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFC1D3A1586FF1F00FCCD5B /* PRPCircleGestureRecognizer.m */; };
@@ -38,6 +39,8 @@
 		AB6ADD1F1586F7590053407F /* CMNDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMNDisplayViewController.h; sourceTree = "<group>"; };
 		AB6ADD201586F7590053407F /* CMNDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMNDisplayViewController.m; sourceTree = "<group>"; };
 		AB9092C917F22BDC00F216F7 /* surprise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = surprise.png; sourceTree = "<group>"; };
+		AB9092CB17F22DE000F216F7 /* CMNRightBezelPanGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMNRightBezelPanGestureRecognizer.h; sourceTree = "<group>"; };
+		AB9092CC17F22DE000F216F7 /* CMNRightBezelPanGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMNRightBezelPanGestureRecognizer.m; sourceTree = "<group>"; };
 		ABB0A396163361DC00ED2C74 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		ABC6BD971586F7B30071408C /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		ABFC1D391586FF1F00FCCD5B /* PRPCircleGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRPCircleGestureRecognizer.h; sourceTree = "<group>"; };
@@ -101,6 +104,8 @@
 				ABFC1D3A1586FF1F00FCCD5B /* PRPCircleGestureRecognizer.m */,
 				AB3C92121633574A00956A33 /* CMNRightBezelSwipeGestureRecognizer.h */,
 				AB3C92131633574A00956A33 /* CMNRightBezelSwipeGestureRecognizer.m */,
+				AB9092CB17F22DE000F216F7 /* CMNRightBezelPanGestureRecognizer.h */,
+				AB9092CC17F22DE000F216F7 /* CMNRightBezelPanGestureRecognizer.m */,
 				ABB0A396163361DC00ED2C74 /* Default-568h@2x.png */,
 				AB9092C917F22BDC00F216F7 /* surprise.png */,
 				AB6ADCF71586F7050053407F /* Supporting Files */,
@@ -187,6 +192,7 @@
 			files = (
 				AB6ADCFD1586F7050053407F /* main.m in Sources */,
 				AB6ADD011586F7050053407F /* CMNAppDelegate.m in Sources */,
+				AB9092CD17F22DE000F216F7 /* CMNRightBezelPanGestureRecognizer.m in Sources */,
 				AB6ADD221586F7590053407F /* CMNDisplayViewController.m in Sources */,
 				ABFC1D3B1586FF1F00FCCD5B /* PRPCircleGestureRecognizer.m in Sources */,
 				ABFCDFD4158A549200D9624E /* TrackingGestureRecognizer.m in Sources */,

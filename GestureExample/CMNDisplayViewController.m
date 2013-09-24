@@ -1,7 +1,7 @@
 #import "CMNDisplayViewController.h"
 #import "TrackingGestureRecognizer.h"
 #import "PRPCircleGestureRecognizer.h"
-#import "CMNBezelSwipeGestureRecognizer.h"
+#import "CMNRightBezelSwipeGestureRecognizer.h"
 
 @interface CMNDisplayViewController ()
 <UIGestureRecognizerDelegate>
@@ -24,7 +24,7 @@
 @property (nonatomic, strong) UISwipeGestureRecognizer *swipeRecognizer;
 @property (nonatomic, strong) UIRotationGestureRecognizer *rotationRecognizer;
 @property (nonatomic, strong) UIPinchGestureRecognizer *pinchRecognizer;
-@property (nonatomic, strong) CMNBezelSwipeGestureRecognizer *bezelSwipeRecognizer;
+@property (nonatomic, strong) CMNRightBezelSwipeGestureRecognizer *bezelSwipeRecognizer;
 @property (nonatomic, strong) PRPCircleGestureRecognizer *circleRecognizer;
 
 @end
@@ -83,7 +83,7 @@
 //    [self.circleRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
 //
 //    // Adding this to the *window*
-//    self.bezelSwipeRecognizer = [[CMNBezelSwipeGestureRecognizer alloc] initWithTarget:self action:@selector(bezelRecognizerFired:)];
+//    self.bezelSwipeRecognizer = [[CMNRightBezelSwipeGestureRecognizer alloc] initWithTarget:self action:@selector(bezelRecognizerFired:)];
 //    [[[UIApplication sharedApplication] windows][0] addGestureRecognizer:self.bezelSwipeRecognizer];
 //    [self.bezelSwipeRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
 }
@@ -160,9 +160,10 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
     [self appendTriggerMessage:text];
 }
 
-- (void)bezelRecognizerFired:(CMNBezelSwipeGestureRecognizer *)recognizer
+- (void)bezelRecognizerFired:(CMNRightBezelSwipeGestureRecognizer *)recognizer
 {
     [self triggerMessage:@"Bezel!"];
+    [self triggerBezelSurprise];
 }
 
 - (void)circleRecognizerFired:(PRPCircleGestureRecognizer *)recognizer
@@ -239,6 +240,37 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
     for (UILabel *field in self.fieldsToClear) {
         field.text = nil;
     }
+}
+
+
+
+
+- (void)triggerBezelSurprise
+{
+    UIWindow *window = self.view.window;
+    UIImage *image = [UIImage imageNamed:@"surprise.png"];
+    UIImageView *view = [[UIImageView alloc] initWithImage:image];
+    view.center = CGPointMake(window.bounds.size.width + view.bounds.size.width,
+                              window.bounds.size.height/2);
+    [window addSubview:view];
+
+    [UIView animateWithDuration:0.3 animations:^{
+        CGPoint center = view.center;
+        center.x -= view.bounds.size.width;
+        view.center = center;
+    } completion:^(BOOL finished) {
+        double delayInSeconds = 1.0;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [UIView animateWithDuration:1 animations:^{
+                CGPoint center = view.center;
+                center.x += view.bounds.size.width;
+                view.center = center;
+            } completion:^(BOOL finished) {
+                [view removeFromSuperview];
+            }];
+        });
+    }];
 }
 
 @end

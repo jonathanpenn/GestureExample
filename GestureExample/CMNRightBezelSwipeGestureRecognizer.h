@@ -1,5 +1,5 @@
 //
-//  CMNBezelGestureRecognizer.h
+//  CMNRightBezelGestureRecognizer.h
 //  GestureExample
 //
 //  Created by Jonathan Penn on 10/20/12.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CMNBezelSwipeGestureRecognizer : UIGestureRecognizer
+@interface CMNRightBezelSwipeGestureRecognizer : UIGestureRecognizer
 
 @end

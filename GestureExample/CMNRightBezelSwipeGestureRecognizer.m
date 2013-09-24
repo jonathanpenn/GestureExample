@@ -1,15 +1,15 @@
 //
-//  CMNBezelGestureRecognizer.m
+//  CMNRightBezelGestureRecognizer.m
 //  GestureExample
 //
 //  Created by Jonathan Penn on 10/20/12.
 //  Copyright (c) 2012 Navel Labs. All rights reserved.
 //
 
-#import "CMNBezelSwipeGestureRecognizer.h"
+#import "CMNRightBezelSwipeGestureRecognizer.h"
 #import <UIKit/UIGestureRecognizerSubclass.h>
 
-@implementation CMNBezelSwipeGestureRecognizer {
+@implementation CMNRightBezelSwipeGestureRecognizer {
     CGPoint startPoint;
     NSTimer *expireTimer;
 }
@@ -17,17 +17,16 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [super touchesBegan:touches withEvent:event];
-    CGFloat height = self.view.bounds.size.height;
     startPoint = [[touches anyObject] locationInView:self.view];
-    if (startPoint.y < height - 20) {
-        self.state = UIGestureRecognizerStateFailed;
-    } else {
+    if ([self pointIsNearRightBezel:startPoint]) {
         [expireTimer invalidate];
         expireTimer = [NSTimer scheduledTimerWithTimeInterval:0.5
                                                        target:self
                                                      selector:@selector(gestureExpired)
                                                      userInfo:nil
                                                       repeats:NO];
+    } else {
+        self.state = UIGestureRecognizerStateFailed;
     }
 }
 
@@ -35,11 +34,9 @@
 {
     [super touchesMoved:touches withEvent:event];
 
-    CGFloat height = self.view.bounds.size.height;
-
     CGPoint newPoint = [[touches anyObject] locationInView:self.view];
 
-    if (newPoint.y < startPoint.y - (height / 10)) {
+    if ([self pointIsFarStraightLeftOfBezel:newPoint]) {
         [expireTimer invalidate];
         self.state = UIGestureRecognizerStateRecognized;
     }
@@ -58,9 +55,23 @@
     self.state = UIGestureRecognizerStateFailed;
 }
 
+
+#pragma mark - Helper Methods For Clarity
+
+/// Called when the timer triggers
 - (void)gestureExpired
 {
     self.state = UIGestureRecognizerStateFailed;
+}
+
+- (BOOL)pointIsNearRightBezel:(CGPoint)point
+{
+    return abs(point.x - self.view.bounds.size.width) < 10;
+}
+
+- (BOOL)pointIsFarStraightLeftOfBezel:(CGPoint)point
+{
+    return abs(point.x - startPoint.x) > 100 && abs(point.y - startPoint.y) < 20;
 }
 
 @end

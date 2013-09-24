@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Oh5-YN-edg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13A584" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Oh5-YN-edg">
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
         <!--Display View Controller-->
@@ -10,123 +10,126 @@
             <objects>
                 <viewController id="Oh5-YN-edg" customClass="CMNDisplayViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RF8-x3-U96">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Tracking" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gtb-6O-6e3">
-                                <rect key="frame" x="20" y="20" width="99" height="21"/>
+                                <rect key="frame" x="20" y="30" width="99" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="tracking state" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LKe-9K-ZlK" userLabel="Tracking State">
-                                <rect key="frame" x="119" y="20" width="181" height="21"/>
+                                <rect key="frame" x="119.00000079472856" y="30" width="181" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Tap" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FUQ-Ff-aU9">
-                                <rect key="frame" x="20" y="54" width="31" height="21"/>
+                                <rect key="frame" x="20" y="64" width="31" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="tap state" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tqi-Ns-9p4" userLabel="Tap State">
-                                <rect key="frame" x="138" y="54" width="162" height="21"/>
+                                <rect key="frame" x="138.00000079472861" y="64" width="162" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Long Press" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2v0-CE-07e">
-                                <rect key="frame" x="20" y="90" width="93" height="21"/>
+                                <rect key="frame" x="20" y="100" width="93" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="long press state" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dGn-ti-znk" userLabel="Long Press State">
-                                <rect key="frame" x="138" y="90" width="162" height="21"/>
+                                <rect key="frame" x="138.00000079472861" y="100" width="162" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="2 Finger Swipe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lst-lf-roo">
-                                <rect key="frame" x="20" y="127" width="120" height="21"/>
+                                <rect key="frame" x="20" y="137" width="120" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="swipe state" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AOk-P3-pbp" userLabel="Swipe State">
-                                <rect key="frame" x="138" y="127" width="162" height="21"/>
+                                <rect key="frame" x="138.00000079472861" y="137" width="162" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Rotation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fc5-uS-o0c">
-                                <rect key="frame" x="20" y="161" width="87" height="21"/>
+                                <rect key="frame" x="20" y="171" width="87" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="rotation state" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y0M-5Y-U6l" userLabel="Rotation State">
-                                <rect key="frame" x="138" y="161" width="162" height="21"/>
+                                <rect key="frame" x="138.00000079472861" y="171" width="162" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Circle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vj7-sX-ZZe">
-                                <rect key="frame" x="20" y="236" width="60" height="21"/>
+                                <rect key="frame" x="20" y="246" width="60" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="circle state" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jvO-KB-GSx" userLabel="Circle State">
-                                <rect key="frame" x="138" y="236" width="162" height="21"/>
+                                <rect key="frame" x="138.00000079472861" y="246" width="162" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Pinch" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mux-YU-KJC">
-                                <rect key="frame" x="20" y="198" width="60" height="21"/>
+                                <rect key="frame" x="20" y="208" width="60" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="pinch state" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="m7C-yV-78h" userLabel="Pinch State">
-                                <rect key="frame" x="138" y="198" width="162" height="21"/>
+                                <rect key="frame" x="138.00000079472861" y="208" width="162" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Bezel Swipe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UhT-ZG-kFf">
-                                <rect key="frame" x="20" y="273" width="110" height="21"/>
+                                <rect key="frame" x="20" y="283" width="110" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="bezel swipe state" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N4p-7E-Kwt" userLabel="Bezel Swipe State">
-                                <rect key="frame" x="138" y="273" width="162" height="21"/>
+                                <rect key="frame" x="138.00000079472861" y="283" width="162" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Recognizer Message" textAlignment="center" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xfI-sb-JOK" userLabel="Message">
-                                <rect key="frame" x="10" y="310" width="300" height="130"/>
+                                <rect key="frame" x="10" y="330" width="300.00000079472858" height="130"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -146,15 +149,15 @@
                         <outlet property="tapStateLabel" destination="tqi-Ns-9p4" id="ELR-0g-u1s"/>
                         <outlet property="trackingStateLabel" destination="LKe-9K-ZlK" id="zPc-sl-bZ7"/>
                         <outlet property="triggerMessage" destination="xfI-sb-JOK" id="HCd-3h-q2g"/>
-                        <outletCollection property="fieldsToClear" destination="LKe-9K-ZlK" id="ywL-K5-sca"/>
-                        <outletCollection property="fieldsToClear" destination="tqi-Ns-9p4" id="OtW-ZO-gXR"/>
-                        <outletCollection property="fieldsToClear" destination="dGn-ti-znk" id="rD4-S0-ZjM"/>
-                        <outletCollection property="fieldsToClear" destination="AOk-P3-pbp" id="g6l-t3-MDP"/>
-                        <outletCollection property="fieldsToClear" destination="y0M-5Y-U6l" id="b42-a5-AqP"/>
-                        <outletCollection property="fieldsToClear" destination="jvO-KB-GSx" id="chQ-3c-rvX"/>
-                        <outletCollection property="fieldsToClear" destination="N4p-7E-Kwt" id="pzK-Z9-0yC"/>
-                        <outletCollection property="fieldsToClear" destination="m7C-yV-78h" id="0rk-c4-BR0"/>
-                        <outletCollection property="fieldsToClear" destination="xfI-sb-JOK" id="ugQ-4V-DG4"/>
+                        <outletCollection property="fieldsToClear" destination="LKe-9K-ZlK" collectionClass="NSMutableArray" id="ywL-K5-sca"/>
+                        <outletCollection property="fieldsToClear" destination="tqi-Ns-9p4" collectionClass="NSMutableArray" id="OtW-ZO-gXR"/>
+                        <outletCollection property="fieldsToClear" destination="dGn-ti-znk" collectionClass="NSMutableArray" id="rD4-S0-ZjM"/>
+                        <outletCollection property="fieldsToClear" destination="AOk-P3-pbp" collectionClass="NSMutableArray" id="g6l-t3-MDP"/>
+                        <outletCollection property="fieldsToClear" destination="y0M-5Y-U6l" collectionClass="NSMutableArray" id="b42-a5-AqP"/>
+                        <outletCollection property="fieldsToClear" destination="jvO-KB-GSx" collectionClass="NSMutableArray" id="chQ-3c-rvX"/>
+                        <outletCollection property="fieldsToClear" destination="N4p-7E-Kwt" collectionClass="NSMutableArray" id="pzK-Z9-0yC"/>
+                        <outletCollection property="fieldsToClear" destination="m7C-yV-78h" collectionClass="NSMutableArray" id="0rk-c4-BR0"/>
+                        <outletCollection property="fieldsToClear" destination="xfI-sb-JOK" collectionClass="NSMutableArray" id="ugQ-4V-DG4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kFR-Z8-xXj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -162,24 +165,6 @@
             <point key="canvasLocation" x="118" y="-55"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="CMNDisplayViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CMNDisplayViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="tapRecognizerFired:" candidateClass="UITapGestureRecognizer"/>
-                <relationship kind="outlet" name="bezelSwipeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="circleStateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="longPressStateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="pinchStateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="rotationStateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="swipeStateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tapStateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="trackingStateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="triggerMessage" candidateClass="UILabel"/>
-                <relationship kind="outletCollection" name="fieldsToClear" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
